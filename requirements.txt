@@ -1,0 +1,27 @@
+# Deep learning / audio
+torch
+torchaudio
+torchcodec
+
+# Numerical + tabular data
+numpy
+pandas
+
+# Audio analysis
+librosa
+soundfile
+
+# Metrics + dataset utilities
+scikit-learn
+
+# Visualization
+matplotlib
+
+# Training utilities
+tqdm
+PyYAML
+tensorboard
+
+# Exploration / notebooks
+jupyter
+ipykernel

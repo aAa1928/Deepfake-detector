@@ -1,27 +1,39 @@
 # Python
 __pycache__/
 *.py[cod]
-*.so
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
+*$py.class
 .venv/
 venv/
 env/
+.env
 
-# Packaging
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw audio datasets (LJSpeech / WaveFake are far too large for Git)
+data/raw/
+
+# Generated/derived data
+data/processed/
+data/interim/
+
+# Model checkpoints and experiment logs
+checkpoints/*.pt
+checkpoints/*.pth
+runs/
+
+# Results that are regenerated locally
+results/*.png
+results/*.json
+results/*.csv
+
+# Build / package artifacts
 build/
 dist/
 *.egg-info/
-
-# Notebooks
-.ipynb_checkpoints/
-
-# Environment files
-.env
-.env.*
-
-# OS and editor files
-.DS_Store
-Thumbs.db
-.vscode/

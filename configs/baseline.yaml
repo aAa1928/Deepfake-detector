@@ -1,0 +1,21 @@
+seed: 42
+
+data:
+  sample_rate: 16000
+  duration_seconds: 4.0
+  train_csv: data/metadata/train.csv
+  val_csv: data/metadata/val.csv
+  test_csv: data/metadata/test.csv
+
+training:
+  batch_size: 32
+  epochs: 30
+  learning_rate: 0.0001
+  num_workers: 4
+
+model:
+  name: baseline
+
+paths:
+  checkpoints: checkpoints/
+  results: results/
