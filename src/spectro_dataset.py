@@ -3,15 +3,15 @@ import torch
 
 class SpectrogramDataset:
     def __init__(self, AI_path, human_path):
-        self.AI_path = Path('../data/processed/AI/wavs')
-        self.human_path = Path('../data/processed/human/wavs')
+        self.AI_path = Path(AI_path)
+        self.human_path = Path(human_path)
 
-        self.file_list = AI_path.glob('*.pt')+human_path.glob('*.pt')
+        self.file_list = self.AI_path.glob('*.pt')+self.human_path.glob('*.pt')
         self.labels = []
 
-        for file in AI_path.glob('*.pt'):
+        for file in self.AI_path.glob('*.pt'):
             self.labels.append(0.0)
-        for file in human_path.glob('*.pt'):
+        for file in self.human_path.glob('*.pt'):
             self.labels.append(1.0)
 
     def __len__(self):
