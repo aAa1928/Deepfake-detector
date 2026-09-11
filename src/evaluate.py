@@ -24,7 +24,7 @@ train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)'''
 
-val_dataset = ASVDataset('../data/processed/asv', '../data/metadata/trial_metadata.txt')
+val_dataset = ASV5Dataset('../data/processed/flac_D', '../data/metadata/ASVSpoof5.dev.track_1.tsv')
 
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
