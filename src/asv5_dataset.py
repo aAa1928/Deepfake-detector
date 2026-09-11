@@ -26,7 +26,7 @@ class ASV5Dataset:
 
         spectrogram = torch.load(file_path)
 
-        target_width=256
+        target_width = 256
 
         if len(spectrogram.shape) == 2:
             spectrogram = spectrogram.unsqueeze(0)

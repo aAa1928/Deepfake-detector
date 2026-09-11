@@ -6,7 +6,7 @@ class ASVDataset:
         self.asv_path = Path(asv_path)
         self.file_list = list(self.asv_path.glob('*.pt'))
 
-        self.metadata={}
+        self.metadata = {}
 
         with open(label_path, 'r') as f:
             for line in f:
@@ -24,7 +24,7 @@ class ASVDataset:
 
         spectrogram = torch.load(file_path)
 
-        target_width=256
+        target_width = 256
 
         if len(spectrogram.shape) == 2:
             spectrogram = spectrogram.unsqueeze(0)

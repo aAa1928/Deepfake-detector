@@ -19,10 +19,10 @@ class SpectrogramDataset:
 
     def __getitem__(self, index, type=None):
         if type=='AI':
-            file_path = self.AI_path.glob('*.pt')[index]
+            file_path = list(self.AI_path.glob('*.pt'))[index]
             label = 0.0
         elif type=='human':
-            file_path = self.human_path.glob('*.pt')[index]
+            file_path = list(self.human_path.glob('*.pt'))[index]
             label = 1.0
         elif type==None:
             file_path = self.file_list[index]
@@ -32,7 +32,7 @@ class SpectrogramDataset:
 
         spectrogram = torch.load(file_path)
 
-        target_width=256
+        target_width = 256
 
         if len(spectrogram.shape) == 2:
             spectrogram = spectrogram.unsqueeze(0)
