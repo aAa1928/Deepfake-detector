@@ -30,7 +30,7 @@ val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
 # Load model
 model = init_resnet18()
-model.load_state_dict(torch.load('models/resnet18_deepfake_audio_new.pth'))
+model.load_state_dict(torch.load('models/resnet18_best.pth'))
 model.to(device)
 
 model.eval()

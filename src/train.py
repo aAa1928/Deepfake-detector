@@ -151,4 +151,4 @@ for epoch in range(num_epochs):
     print(f'Training Loss: {epoch_loss:.4f}.')
 
 torch.save(model.state_dict(), Path('models/resnet18_deepfake_audio_new.pth'))
-print('Model saved to models/resnet18_deepfake_audio_new.pth')
+print('Model saved to models/resnet18_best.pth')
