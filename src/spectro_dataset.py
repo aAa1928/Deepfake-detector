@@ -6,7 +6,7 @@ class SpectrogramDataset:
         self.AI_path = Path(AI_path)
         self.human_path = Path(human_path)
 
-        self.file_list = self.AI_path.glob('*.pt')+self.human_path.glob('*.pt')
+        self.file_list = list(self.AI_path.glob('*.pt'))+list(self.human_path.glob('*.pt'))
         self.labels = []
 
         for file in self.AI_path.glob('*.pt'):
@@ -32,7 +32,22 @@ class SpectrogramDataset:
 
         spectrogram = torch.load(file_path)
 
+        target_width=256
+
         if len(spectrogram.shape) == 2:
             spectrogram = spectrogram.unsqueeze(0)
 
+        if spectrogram.shape[2] < target_width:
+            padding = target_width - spectrogram.shape[2]
+            spectrogram = torch.nn.functional.pad(spectrogram, (0, padding))
+        elif spectrogram.shape[2] > target_width:
+            spectrogram = spectrogram[:, :, :target_width]
+
         return spectrogram, label
+
+    def get_human_list(self):
+        return list(self.human_path.glob('*.pt'))
+    def get_AI_list(self):
+        return list(self.AI_path.glob('*.pt'))
+    def get_file_list(self):
+        return self.file_list
