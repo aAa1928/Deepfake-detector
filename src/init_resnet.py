@@ -33,8 +33,8 @@ def init_resnet18():
 
     model.fc = nn.Linear(model.fc.in_features, 2) #gives 2 outputs(AI or human)
 
-    """add model to device(CUDA/MPS/CPU) AFTER ALL WEIGHTS AND CHANNEL 
-    MODIFICATIONS ARE MADE, OTHERWISE IT WILL THROW AN ERROR"""
+    '''add model to device(CUDA/MPS/CPU) AFTER ALL WEIGHTS AND CHANNEL 
+    MODIFICATIONS ARE MADE, OTHERWISE IT WILL THROW AN ERROR'''
     model.to(device)
 
     return model
